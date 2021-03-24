@@ -40,10 +40,13 @@ try:
     print(f'Пароль: {users["account"]["password"]}')
     print(f'Средний возраст пользователей: {np.mean(ageall)}' ) 
 
-except TypeError:
+except ValueError:
     print('Пользователь с указанным номером не найден.')
 
-enter_end = input('Введите номер пользователя, которого нужо переместить в конец: ')  
-userss = user_list.pop()  
-print(user_list)
-usersss = user_list.append(userss)
+enter_end = input('Введите номер пользователя, которого нужо переместить в конец: ')
+
+
+print(f'Список до измения: {user_list}')
+new_user = user_list.pop(int(enter_end)-1)
+user_list.append(new_user)
+print(f'Список после измения: {user_list}')
