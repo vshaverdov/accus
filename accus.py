@@ -31,17 +31,12 @@ except KeyError:
 enter_number = input('Введите порядковый номер: ')
 users = user_list[int(enter_number)-1]
 
-
-try:
-    print(f'Данные по юзеру №: {enter_number}')
-    print(f'Имя: {users["name"]}')
-    print(f'Возраст: {users["age"]}')
-    print(f'Логин: {users["account"]["login"]}')
-    print(f'Пароль: {users["account"]["password"]}')
-    print(f'Средний возраст пользователей: {np.mean(ageall)}' ) 
-
-except ValueError:
-    print('Пользователь с указанным номером не найден.')
+print(f'Данные по юзеру №: {enter_number}')
+print(f'Имя: {users["name"]}')
+print(f'Возраст: {users["age"]}')
+print(f'Логин: {users["account"]["login"]}')
+print(f'Пароль: {users["account"]["password"]}')
+print(f'Средний возраст пользователей: {np.mean(ageall)}' ) 
 
 enter_end = input('Введите номер пользователя, которого нужо переместить в конец: ')
 
