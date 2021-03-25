@@ -31,12 +31,17 @@ except KeyError:
 enter_number = input('Введите порядковый номер: ')
 users = user_list[int(enter_number)-1]
 
-print(f'Данные по юзеру №: {enter_number}')
-print(f'Имя: {users["name"]}')
-print(f'Возраст: {users["age"]}')
-print(f'Логин: {users["account"]["login"]}')
-print(f'Пароль: {users["account"]["password"]}')
-print(f'Средний возраст пользователей: {np.mean(ageall)}' ) 
+
+try:
+    print(f'Данные по юзеру №: {enter_number}')
+    print(f'Имя: {users["name"]}')
+    print(f'Возраст: {users["age"]}')
+    print(f'Логин: {users["account"]["login"]}')
+    print(f'Пароль: {users["account"]["password"]}')
+    print(f'Средний возраст пользователей: {np.mean(ageall)}' ) 
+
+except ValueError:
+    print('Пользователь с указанным номером не найден.')
 
 enter_end = input('Введите номер пользователя, которого нужо переместить в конец: ')
 
@@ -46,5 +51,5 @@ print(user_list)
 new_user = user_list.pop(int(enter_end)-1)
 print(f'Пользователь с именем {new_user["name"]} перемещен в конец')
 user_list.append(new_user)
-print('Список после измения:')
+print('Список после изменения:')
 print(user_list)
