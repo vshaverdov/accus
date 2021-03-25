@@ -46,7 +46,10 @@ except ValueError:
 enter_end = input('Введите номер пользователя, которого нужо переместить в конец: ')
 
 
-print(f'Список до измения: {user_list}')
+print('Список до измения:')
+print(user_list)
 new_user = user_list.pop(int(enter_end)-1)
+print(f'Пользователь с именем {new_user["name"]} перемещен в конец')
 user_list.append(new_user)
-print(f'Список после измения: {user_list}')
+print('Список после измения:')
+print(user_list)
